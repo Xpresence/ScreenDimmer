@@ -115,7 +115,7 @@ namespace Augustine.ScreenDimmer
             overlayWindow = new Form();
             overlayWindow.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             overlayWindow.ShowInTaskbar = false;
-            overlayWindow.Show();
+            overlayWindow.BackColor = Color.Black;
             overlayWindow.WindowState = FormWindowState.Maximized;
             enforceOnTop();
             NativeMethods.SetWindowLong(overlayWindow.Handle, NativeMethods.GWL_EXSTYLE,
@@ -561,6 +561,8 @@ namespace Augustine.ScreenDimmer
                 configuration.LoadDefault();
             }
             configToUi();
+
+            overlayWindow.Show();
         }
 
         private void uiToConfig()
