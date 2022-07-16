@@ -215,7 +215,7 @@
             this.buttonColor.Size = new System.Drawing.Size(55, 38);
             this.buttonColor.TabIndex = 47;
             this.buttonColor.Text = "Color\r\n";
-            this.toolTipHint.SetToolTip(this.buttonColor, "Apply medium brightness and overlay color.\r\nRight click to change color.");
+            this.toolTipHint.SetToolTip(this.buttonColor, "Apply minimum brightness and overlay color.\r\nRight click to change color.");
             this.buttonColor.UseVisualStyleBackColor = false;
             this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
             // 

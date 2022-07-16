@@ -259,22 +259,11 @@ namespace Augustine.ScreenDimmer
         }
 
         /// <summary>
-        /// Sets the backcolor of the overlay window and dim button to the desired color.
-        /// </summary>
-        /// <param name="color"></param>
-        //private void setDimColor(Color color)
-        //{
-        //    buttonDim.BackColor = color;
-        //    overlayWindow.BackColor = color;
-        //}
-
-        /// <summary>
         /// Sets the backcolor of the overlay window and color button to the desired color.
         /// </summary>
         /// <param name="color"></param>
         private void setDimColor(Color color)
         {
-            //buttonColor.BackColor = color;
             overlayWindow.BackColor = color;
         }
 
