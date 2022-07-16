@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.toolTipHint = new System.Windows.Forms.ToolTip(this.components);
             this.buttonDim = new System.Windows.Forms.Button();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelScreen = new System.Windows.Forms.Label();
             this.labelBrightness = new System.Windows.Forms.Label();
             this.labelExpandCollapse = new System.Windows.Forms.Label();
@@ -40,6 +38,9 @@
             this.labelBug = new System.Windows.Forms.Label();
             this.labelAbout = new System.Windows.Forms.Label();
             this.buttonBright = new System.Windows.Forms.Button();
+            this.buttonColor = new System.Windows.Forms.Button();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkBoxZeroBrightness = new System.Windows.Forms.CheckBox();
             this.comboBoxScreens = new System.Windows.Forms.ComboBox();
             this.checkBoxDebug = new System.Windows.Forms.CheckBox();
@@ -79,7 +80,6 @@
             // 
             this.buttonDim.AutoSize = true;
             this.buttonDim.BackColor = System.Drawing.Color.Black;
-            this.buttonDim.ContextMenuStrip = this.contextMenuStrip2;
             this.buttonDim.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonDim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonDim.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
@@ -89,27 +89,12 @@
             this.buttonDim.ForeColor = System.Drawing.Color.Gray;
             this.buttonDim.Location = new System.Drawing.Point(3, 3);
             this.buttonDim.Name = "buttonDim";
-            this.buttonDim.Size = new System.Drawing.Size(85, 31);
+            this.buttonDim.Size = new System.Drawing.Size(116, 38);
             this.buttonDim.TabIndex = 46;
-            this.buttonDim.Text = "Dim ";
-            this.toolTipHint.SetToolTip(this.buttonDim, "Apply minimum brightness.\r\nRight click to change color.");
+            this.buttonDim.Text = "Dim\r\n";
+            this.toolTipHint.SetToolTip(this.buttonDim, "Apply minimum brightness.");
             this.buttonDim.UseVisualStyleBackColor = false;
             this.buttonDim.Click += new System.EventHandler(this.buttonDim_Click);
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.colorToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(113, 26);
-            // 
-            // colorToolStripMenuItem
-            // 
-            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.colorToolStripMenuItem.Text = "Color...";
-            this.colorToolStripMenuItem.Click += new System.EventHandler(this.colorToolStripMenuItem_Click);
             // 
             // labelScreen
             // 
@@ -141,7 +126,7 @@
             this.labelExpandCollapse.AutoSize = true;
             this.labelExpandCollapse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelExpandCollapse.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExpandCollapse.Location = new System.Drawing.Point(166, 102);
+            this.labelExpandCollapse.Location = new System.Drawing.Point(289, 109);
             this.labelExpandCollapse.Margin = new System.Windows.Forms.Padding(0);
             this.labelExpandCollapse.Name = "labelExpandCollapse";
             this.labelExpandCollapse.Size = new System.Drawing.Size(22, 20);
@@ -155,10 +140,10 @@
             this.labelHelp.AutoSize = true;
             this.labelHelp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelHelp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHelp.Location = new System.Drawing.Point(142, 102);
+            this.labelHelp.Location = new System.Drawing.Point(266, 109);
             this.labelHelp.Margin = new System.Windows.Forms.Padding(0);
             this.labelHelp.Name = "labelHelp";
-            this.labelHelp.Size = new System.Drawing.Size(24, 20);
+            this.labelHelp.Size = new System.Drawing.Size(23, 20);
             this.labelHelp.TabIndex = 55;
             this.labelHelp.Text = "❔";
             this.toolTipHint.SetToolTip(this.labelHelp, "Hotkeys...");
@@ -173,7 +158,7 @@
             this.labelBug.Location = new System.Drawing.Point(155, 97);
             this.labelBug.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.labelBug.Name = "labelBug";
-            this.labelBug.Size = new System.Drawing.Size(24, 20);
+            this.labelBug.Size = new System.Drawing.Size(30, 20);
             this.labelBug.TabIndex = 56;
             this.labelBug.Text = "🐞";
             this.toolTipHint.SetToolTip(this.labelBug, "View...");
@@ -185,7 +170,7 @@
             this.labelAbout.AutoSize = true;
             this.labelAbout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelAbout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAbout.Location = new System.Drawing.Point(0, 102);
+            this.labelAbout.Location = new System.Drawing.Point(0, 109);
             this.labelAbout.Margin = new System.Windows.Forms.Padding(0);
             this.labelAbout.Name = "labelAbout";
             this.labelAbout.Size = new System.Drawing.Size(22, 20);
@@ -204,14 +189,50 @@
             this.buttonBright.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBright.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBright.ForeColor = System.Drawing.Color.Gray;
-            this.buttonBright.Location = new System.Drawing.Point(94, 3);
+            this.buttonBright.Location = new System.Drawing.Point(186, 3);
             this.buttonBright.Name = "buttonBright";
-            this.buttonBright.Size = new System.Drawing.Size(85, 31);
+            this.buttonBright.Size = new System.Drawing.Size(116, 38);
             this.buttonBright.TabIndex = 45;
-            this.buttonBright.Text = "Brighten ";
+            this.buttonBright.Text = "Brighten\r\n";
             this.toolTipHint.SetToolTip(this.buttonBright, "Apply maximum brightness.");
             this.buttonBright.UseVisualStyleBackColor = true;
             this.buttonBright.Click += new System.EventHandler(this.buttonBright_Click);
+            // 
+            // buttonColor
+            // 
+            this.buttonColor.AutoSize = true;
+            this.buttonColor.BackColor = System.Drawing.Color.Wheat;
+            this.buttonColor.ContextMenuStrip = this.contextMenuStrip2;
+            this.buttonColor.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonColor.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.buttonColor.FlatAppearance.BorderSize = 0;
+            this.buttonColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonColor.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonColor.ForeColor = System.Drawing.Color.Gray;
+            this.buttonColor.Location = new System.Drawing.Point(125, 3);
+            this.buttonColor.Name = "buttonColor";
+            this.buttonColor.Size = new System.Drawing.Size(55, 38);
+            this.buttonColor.TabIndex = 47;
+            this.buttonColor.Text = "Color\r\n";
+            this.toolTipHint.SetToolTip(this.buttonColor, "Apply medium brightness and overlay color.\r\nRight click to change color.");
+            this.buttonColor.UseVisualStyleBackColor = false;
+            this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.colorToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(113, 26);
+            // 
+            // colorToolStripMenuItem
+            // 
+            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.colorToolStripMenuItem.Text = "Color...";
+            this.colorToolStripMenuItem.Click += new System.EventHandler(this.colorToolStripMenuItem_Click);
             // 
             // checkBoxZeroBrightness
             // 
@@ -219,7 +240,7 @@
             this.tableLayoutPanel3.SetColumnSpan(this.checkBoxZeroBrightness, 2);
             this.checkBoxZeroBrightness.Location = new System.Drawing.Point(3, 3);
             this.checkBoxZeroBrightness.Name = "checkBoxZeroBrightness";
-            this.checkBoxZeroBrightness.Size = new System.Drawing.Size(139, 17);
+            this.checkBoxZeroBrightness.Size = new System.Drawing.Size(138, 17);
             this.checkBoxZeroBrightness.TabIndex = 47;
             this.checkBoxZeroBrightness.Text = "Allow Zero Brightness";
             this.toolTipWarning.SetToolTip(this.checkBoxZeroBrightness, "When setting brightness to zero, the screen will be completely dimmed with select" +
@@ -236,7 +257,7 @@
             this.comboBoxScreens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxScreens.Location = new System.Drawing.Point(31, 35);
             this.comboBoxScreens.Name = "comboBoxScreens";
-            this.comboBoxScreens.Size = new System.Drawing.Size(154, 21);
+            this.comboBoxScreens.Size = new System.Drawing.Size(277, 21);
             this.comboBoxScreens.TabIndex = 43;
             this.comboBoxScreens.DropDown += new System.EventHandler(this.comboBoxScreens_DropDown);
             this.comboBoxScreens.SelectedIndexChanged += new System.EventHandler(this.comboBoxScreens_SelectedIndexChanged);
@@ -312,7 +333,7 @@
             this.trackBarBrightness.Maximum = 100;
             this.trackBarBrightness.Minimum = 20;
             this.trackBarBrightness.Name = "trackBarBrightness";
-            this.trackBarBrightness.Size = new System.Drawing.Size(154, 26);
+            this.trackBarBrightness.Size = new System.Drawing.Size(277, 26);
             this.trackBarBrightness.SmallChange = 10;
             this.trackBarBrightness.TabIndex = 30;
             this.trackBarBrightness.TickFrequency = 10;
@@ -415,16 +436,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(188, 122);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(311, 129);
             this.tableLayoutPanel1.TabIndex = 58;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.AutoSize = true;
-            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel2, 4);
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.Controls.Add(this.buttonColor, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.buttonDim, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.buttonBright, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -432,7 +455,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(182, 37);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(305, 44);
             this.tableLayoutPanel2.TabIndex = 59;
             // 
             // tableLayoutPanel3
@@ -449,7 +472,7 @@
             this.tableLayoutPanel3.Controls.Add(this.checkBoxAllowTransition, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.checkBoxDebug, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 2);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(197, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(320, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 5;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -476,7 +499,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(408, 128);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(531, 135);
             this.tableLayoutPanel4.TabIndex = 60;
             // 
             // ScreenDimmer
@@ -486,7 +509,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(430, 153);
+            this.ClientSize = new System.Drawing.Size(537, 153);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -544,6 +567,7 @@
         private System.Windows.Forms.Button buttonBright;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button buttonColor;
     }
 }
 

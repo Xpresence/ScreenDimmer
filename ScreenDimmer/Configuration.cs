@@ -34,6 +34,8 @@ namespace Augustine.ScreenDimmer
         internal double FadeDuration;
         [DataMember(Name = "Color")]
         internal Color DimColor = Color.Black;
+        [DataMember(Name = "ColorButtonColor")]
+        internal Color ColorButtonColor = Color.Wheat;
 
         [DataMember(Name = "HotkeyDim")]
         private string hotKeyDim {
@@ -94,11 +96,11 @@ namespace Augustine.ScreenDimmer
         internal void LoadDefault()
         {
             MonitorIndex = 0;
-            CurrentBrightness = 70;
-            IsZeroBrightness = true;
+            CurrentBrightness = 50;
+            IsZeroBrightness = false;
             IsEnforceOnTop = false;
             IsDebug = false;
-            IsTransition = true;
+            IsTransition = false;
             EnforcingPeriod = 30;
             FadeDuration = 250;
             HotKeyDim.SetKey(KeyModifiers.MOD_WIN | KeyModifiers.MOD_CONTROL, System.Windows.Forms.Keys.Left);

@@ -252,7 +252,9 @@ namespace Augustine.ScreenDimmer
             colorDialog1.Color = overlayWindow.BackColor;
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
+                //setDimColor(colorDialog1.Color);
                 setDimColor(colorDialog1.Color);
+                buttonColor.BackColor = colorDialog1.Color;
             }
         }
 
@@ -260,9 +262,19 @@ namespace Augustine.ScreenDimmer
         /// Sets the backcolor of the overlay window and dim button to the desired color.
         /// </summary>
         /// <param name="color"></param>
+        //private void setDimColor(Color color)
+        //{
+        //    buttonDim.BackColor = color;
+        //    overlayWindow.BackColor = color;
+        //}
+
+        /// <summary>
+        /// Sets the backcolor of the overlay window and color button to the desired color.
+        /// </summary>
+        /// <param name="color"></param>
         private void setDimColor(Color color)
         {
-            buttonDim.BackColor = color;
+            //buttonColor.BackColor = color;
             overlayWindow.BackColor = color;
         }
 
@@ -378,6 +390,23 @@ namespace Augustine.ScreenDimmer
             }
         }
 
+
+        /// <summary>
+        /// Dims the sceen to medium brightness.
+        /// </summary>
+        private void color()
+        {
+            if (checkBoxAllowTransition.Checked)
+            {
+                fade(trackBarBrightness.Minimum);
+            }
+            else
+            {
+                trackBarBrightness.Value = trackBarBrightness.Minimum;
+            }
+        }
+
+
         /// <summary>
         /// Initializes state variables for transition effect.
         /// </summary>
@@ -426,6 +455,13 @@ namespace Augustine.ScreenDimmer
         private void buttonDim_Click(object sender, EventArgs e)
         {
             dim();
+            setDimColor(buttonDim.BackColor);
+        }
+
+        private void buttonColor_Click(object sender, EventArgs e)
+        {
+            color();
+            setDimColor(buttonColor.BackColor);
         }
 
         private void buttonBright_Click(object sender, EventArgs e)
@@ -531,6 +567,7 @@ namespace Augustine.ScreenDimmer
         {
             configuration.CurrentBrightness = (byte) trackBarBrightness.Value;
             configuration.DimColor = getDimColor();
+            configuration.ColorButtonColor = buttonColor.BackColor;
             configuration.EnforcingPeriod = (int) numericUpDown1.Value;
             configuration.IsDebug = checkBoxDebug.Checked;
             configuration.IsEnforceOnTop = checkBoxEnforceOnTop.Checked;
@@ -577,6 +614,7 @@ namespace Augustine.ScreenDimmer
             }
 
             setDimColor(configuration.DimColor);
+            buttonColor.BackColor = configuration.ColorButtonColor;
             checkBoxEnforceOnTop.Checked = configuration.IsEnforceOnTop;
             checkBoxZeroBrightness.Checked = configuration.IsZeroBrightness;
             checkBoxDebug.Checked = configuration.IsDebug;
